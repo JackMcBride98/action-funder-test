@@ -45,7 +45,7 @@ function App() {
                 }
               }}
             >
-              <option value="none"> -- select an option --</option>
+              <option value="none">-- select an option --</option>
               <option value="priceLH">Price: Low to High</option>
               <option value="priceHL">Price: High to Low</option>
               <option value="alphaAZ">Alphabetically: A to Z</option>
@@ -73,11 +73,13 @@ const FundCard = ({ id, name, amount }) => (
     </div>
 
     <div className="flex">
-      <p className="text-xl font-semibold mb-4">{name}</p>
+      <p data-testid="fund-name" className="text-xl font-semibold mb-4">
+        {name}
+      </p>
     </div>
 
     <div className="flex flex-col text-slate-500 space-y-2 mb-3">
-      <p className="flex items-center">
+      <p data-testid="fund-amount" className="flex items-center">
         <BackpackIcon className="mr-2" />
         Total fund amount: £{amount.toLocaleString()}
       </p>
